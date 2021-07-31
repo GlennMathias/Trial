@@ -8,6 +8,7 @@ body
 {
 	display:flex;
 	justify-content:space-between;
+	font-size:1.5rem;
 }
 
 .blue
@@ -41,9 +42,17 @@ a
 	
 }
 
-.button3
+.rounded-button
 {
 	border:0.2rem solid #1A4494;
-	border-radius:0.4rem;
+	border-radius:0.8rem;
 	color:white;
+	width:7rem;
+	text-align:center;
+}
+
+
+.text-space
+{
+	width:25rem;
 }
