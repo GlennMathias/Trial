@@ -1,0 +1,49 @@
+body
+{
+	background-color:#151728;
+	color:#FFFFFF;
+}
+
+.navBar
+{
+	display:flex;
+	justify-content:space-between;
+}
+
+.blue
+{
+	color:#1A4494;
+}
+
+.white
+{
+	color:white;
+}
+
+a
+{
+	text-decoration:none;
+}
+
+.button1
+{
+	border:0.2rem solid #1A4494;
+	border-radius:0.4rem;
+	color:white;
+	
+}
+
+.button2
+{
+	background-color:#1A4494;
+	border-radius:0.4rem;
+	color:white;
+	
+}
+
+.button3
+{
+	border:0.2rem solid #1A4494;
+	border-radius:0.4rem;
+	color:white;
+}
