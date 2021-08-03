@@ -4,11 +4,24 @@ body
 	color:#FFFFFF;
 }
 
+.total-container
+{
+	height:100vh;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+}
+
 .navBar
 {
 	display:flex;
 	justify-content:space-between;
 	font-size:1.5rem;
+}
+
+.general-use
+{
+	word-spacing:2rem;
 }
 
 .blue
@@ -19,6 +32,7 @@ body
 .white
 {
 	color:white;
+	margin:1.2rem 0rem 1.2rem;
 }
 
 a
@@ -38,6 +52,7 @@ a
 {
 	background-color:#1A4494;
 	border-radius:0.4rem;
+	border:0.2rem solid #1A4494;
 	color:white;
 	
 }
@@ -49,10 +64,22 @@ a
 	color:white;
 	width:7rem;
 	text-align:center;
+	margin:10px 0px 10px;
 }
 
 
 .text-space
 {
 	width:25rem;
+	font-size:3rem;
+	
+}
+
+.main-content
+{
+	display:flex;
+	margin:5rem;
+	justify-content:left;
+	align-items: center;
+	
 }
