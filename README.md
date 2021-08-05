@@ -1,4 +1,4 @@
-# Trial
-First learning folder
+# E Commerce Website
+Learning to create a webpage.
 
-Just a simple test folder. Just learning git.
+This features a landing page for a fictional E-commerce website.
