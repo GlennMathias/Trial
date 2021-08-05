@@ -42,7 +42,7 @@ a
 
 .button1
 {
-	border:0.2rem solid #1A4494;
+	border:0.2rem solid #162258;
 	border-radius:0.4rem;
 	color:white;
 	
@@ -50,16 +50,16 @@ a
 
 .button2
 {
-	background-color:#1A4494;
+	background-color:#061561;
 	border-radius:0.4rem;
-	border:0.2rem solid #1A4494;
+	border:0.2rem solid #061561;
 	color:white;
 	
 }
 
 .rounded-button
 {
-	border:0.2rem solid #1A4494;
+	border:0.2rem solid #172EA1;
 	border-radius:0.8rem;
 	color:white;
 	width:7rem;
