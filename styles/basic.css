@@ -2,6 +2,7 @@ body
 {
 	background-color:#151728;
 	color:#FFFFFF;
+	height:1vh;
 }
 
 .total-container
@@ -16,7 +17,7 @@ body
 {
 	display:flex;
 	justify-content:space-between;
-	font-size:1.5rem;
+	font-size:1.6em;
 }
 
 .general-use
@@ -44,7 +45,9 @@ a
 {
 	border:0.2rem solid #1A4494;
 	border-radius:0.4rem;
+	max-width:5.2rem;
 	color:white;
+	text-align:center;
 	
 }
 
@@ -82,7 +85,7 @@ a
 {
 	display:flex;
 	margin:5rem;
-	justify-content:left;
+	justify-content:space-between;
 	align-items: center;
 	
 }
