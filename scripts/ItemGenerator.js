@@ -64,7 +64,7 @@ let create_item=function(item_data)
 
 
 data={
-	'img':'https://i2.wp.com/godofindia.com/wp-content/uploads/2017/09/beautiful-evening-pictures.jpg',
+	'img':'',
 	'name':'Apple',
 	'price_per_unit':50
 	}
