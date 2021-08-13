@@ -87,6 +87,7 @@ data={
 items=[data,data,data,data];
 
 let item_store=document.getElementById('item-store');
+
 for (data of items)
 {
 	item_store.append(create_item(data));
