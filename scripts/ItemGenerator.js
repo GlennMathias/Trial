@@ -1,26 +1,36 @@
-items_on_list={}
-
-let add_item_to_obj= function(data)
+class ShoppingList
 {
-	items_on_list[items_on_list.length+1]=data;
+
+items={};
+
+add_item_to_obj(data)
+{	
+	this.items[data.name]=data;
 }
 
-let remove_item_from_obj= function(data)
+remove_item_from_obj(data)
 {
-	//needed to be coded
+	//need to be coded
 }
 
-let add_to_list=function(data,qty)
-{
+add_to_list(data,qty)
+{	
+	console.log(this.items)
 	let list=document.getElementById('shopping_list');
 	let holder=document.createElement('div');
-	let total_cost=data['price_per_unit']*Number(qty);
+	let total_cost=data['price_per_unit']*qty;
 	holder.textContent=data['name']+' '+qty+' '+total_cost;
 	list.append(holder);
-	console.log(list);
-	add_item_to_obj(
+	this.add_item_to_obj(
 			{'name':data['name'],'qty':qty,'total':total_cost}
 			);
+}
+
+send_to_server()
+{
+	//write code here
+}
+
 }
 
 let create_item=function(item_data)
@@ -43,11 +53,15 @@ let create_item=function(item_data)
 	
 	//create add button
 	let add_button=document.createElement('button');
-	add_button.value="Add";
-	add_button.addEventListener('click',(e)=>{
-							let qty=qty_input.value;
-							console.log(qty_input);
-							add_to_list(item_data,qty);
+	add_button.textContent="Add";
+	add_button.addEventListener('click',()=>{	
+							let shopping_list= new ShoppingList();
+							let qty=Number(qty_input.value);
+							console.log(typeof qty,qty,);
+							const MAX_QTY=100000;
+							if (qty && !isNaN(qty) && qty<MAX_QTY){
+							shopping_list.add_to_list(item_data,qty);
+							}
 
 						})
 
@@ -62,13 +76,18 @@ let create_item=function(item_data)
 	return box
 }
 
-
+//###############################################################################################################################################
 data={
-	'img':'https://i2.wp.com/godofindia.com/wp-content/uploads/2017/09/beautiful-evening-pictures.jpg',
+	'img':'',
 	'name':'Apple',
-	'price_per_unit':50
+	'price_per_unit':50,
+	'unit':'Kg'
 	}
 
+items=[data,data,data,data];
 
 let item_store=document.getElementById('item-store');
-item_store.append(create_item(data));
+for (data of items)
+{
+	item_store.append(create_item(data));
+}
