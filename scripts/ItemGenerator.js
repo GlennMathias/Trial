@@ -39,6 +39,7 @@ let create_item=function(item_data)
 
 	let box=document.createElement('div');
 	box.class='item';
+	let shopping_list= new ShoppingList();
 	
 	//create image holder,link image to src
 	let image_holder= new Image(130,150);
@@ -55,7 +56,6 @@ let create_item=function(item_data)
 	let add_button=document.createElement('button');
 	add_button.textContent="Add";
 	add_button.addEventListener('click',()=>{	
-							let shopping_list= new ShoppingList();
 							let qty=Number(qty_input.value);
 							console.log(typeof qty,qty,);
 							const MAX_QTY=100000;
