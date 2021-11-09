@@ -9,8 +9,12 @@ import com.example.TeamWork.model.Cart;
 @Repository
 public interface CartDAO {
 	
-	public void addToCart(int prodId,int qty);
 	public void createOrder(int CustId);
-	public void payOut();
+	
+	public void addToCart(int prodId,int qty);
 	public List<Cart> viewCart(int CustId);
+	public void removeFromCart(int ProdId,int ordId);
+	public void updateCart(int qty, int proId, int ordId);
+	
+	public void payOut();
 }

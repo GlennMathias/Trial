@@ -143,6 +143,25 @@ System.out.println(addCustQuerry);
 	}
 	
 	
+	@Override
+	public boolean updateprofile(int CustId, String name, String username, int phoneno, String email, String address) 
+	{
+		
+		String updateprofQuery = "update customer set CustName = '"+name+"' , CustUserName='"+username+"' , CustPhone="+phoneno+" , CustEmail='"+email+"' , CustAddress='"+address+"' where CustId="+CustId+";";
+		
+		
+		Statement st;
+		
+		try {
+			st=connection.createStatement();
+			st.executeUpdate(updateprofQuery);
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
 	
 
 }

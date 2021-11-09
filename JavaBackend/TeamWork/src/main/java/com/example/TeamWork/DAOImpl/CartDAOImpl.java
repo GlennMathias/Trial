@@ -170,5 +170,48 @@ String updateOrdersQuerry = "update orders set total=(select sum(price) from ord
 		
 		return cartList;
 	}
+	
+	
+	@Override
+	public void removeFromCart(int ProdId, int ordId) {
+String removeOrderDetailsQuerry = "delete from orddetails where ProId= "+ProdId+" and ordId="+ordId+";";
+		
+		
+		//String insertOrderQuerry = "insert into orders values ("+ordId+",'"+orderDate+"',"+custId+","+total+");";
+		
+		System.out.println(removeOrderDetailsQuerry);
+		Statement stmt;
+		try {
+			stmt=connection.createStatement();
+			stmt.executeUpdate(removeOrderDetailsQuerry);
+			
+			}
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@Override
+	public void updateCart(int qty, int proId, int ordId)
+	{
+		String updateOrderDetailsQuerry = "update orddetails set Qty="+qty+", price= "+qty+"*(select ProPrice from product where ProId="+proId+") where ordId = "+ordId+" and proId = "+proId+" ;";
+		
+		
+		//String insertOrderQuerry = "insert into orders values ("+ordId+",'"+orderDate+"',"+custId+","+total+");";
+		
+		System.out.println(updateOrderDetailsQuerry);
+		Statement stmt;
+		try {
+			stmt=connection.createStatement();
+			stmt.executeUpdate(updateOrderDetailsQuerry);
+			
+			}
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }
