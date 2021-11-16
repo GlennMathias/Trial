@@ -1,6 +1,7 @@
 package com.example.TeamWork.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,7 @@ import com.example.TeamWork.DAO.CustDAO;
 import com.example.TeamWork.model.Customer;
 import com.example.TeamWork.model.Product;
 
+@CrossOrigin(origins="*")
 @RestController
 public class CustController {
 	
@@ -41,8 +43,8 @@ public class CustController {
 	}
 	
 	
-	@GetMapping("/name/{name}/{password}")
-	public String getName(@PathVariable("name") String name,@PathVariable("password") String password)
+	@GetMapping("/login/{name}/{password}")
+	public int login(@PathVariable("name") String name,@PathVariable("password") String password)
 	{
 		return custDao.loginValidation(name,password);
 	}
@@ -54,5 +56,11 @@ public class CustController {
 		custDao.updateprofile(c.getCustid(), c.getCustname(), c.getCustusername(), c.getCustphone(), c.getCustemail(), c.getCustaddress());		
 	}
 	
+	
+	@GetMapping("/getCustomerDetails/{id}")
+	public Customer getCustomerDetails(@PathVariable ("id") int id)
+	{
+		return custDao.getProfile(id);
+	}
 	
 }

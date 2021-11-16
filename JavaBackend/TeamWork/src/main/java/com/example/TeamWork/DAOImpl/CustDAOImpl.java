@@ -107,7 +107,7 @@ System.out.println(addCustQuerry);
 	}
 	
 	@Override
-	public String loginValidation(String username ,String password) {
+	public int loginValidation(String username ,String password) {
 		// TODO Auto-generated method stub
 		
 		String custtValidationQuerry = "select CustId,CustName,CustUserName,CustPassword from customer where CustUserName='"+username+"' and Custpassword='"+password+"' ;";
@@ -129,17 +129,17 @@ System.out.println(addCustQuerry);
 			if (custId != -1)
 			{
 				
-				return CustName;
+				return custId;
 			}
 			else
 			{
-				return "Querry does not works";
+				return -1;
 			}
 			
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		return CustName;
+		return -1;
 	}
 	
 	
@@ -163,5 +163,40 @@ System.out.println(addCustQuerry);
 		return false;
 	}
 	
+	
+	@Override
+	public Customer getProfile(int userId)
+	{
+		String getProfileQuerry="SELECT * FROM customer where CustId = "+userId+";";
+		Customer cust = new Customer();
+		
+		try
+		{
+			Statement stmt = connection.createStatement();
+			
+			ResultSet rs =stmt.executeQuery(getProfileQuerry);
+			while(rs.next())
+			{
+				cust.setCustid(rs.getInt(1));
+				cust.setCustname(rs.getString(2));
+				cust.setCustusername(rs.getString(3));
+				cust.setCustpassword(rs.getString(4));
+				cust.setCustphone(rs.getInt(5)); 
+				cust.setCustemail(rs.getString(6));
+				cust.setCustaddress(rs.getString(7));
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		System.out.println("Customer: "+cust);
+		
+		return cust;
+		
+		
+		
+	}
 
 }

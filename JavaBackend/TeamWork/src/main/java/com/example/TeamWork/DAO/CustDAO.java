@@ -10,7 +10,8 @@ public interface CustDAO {
 	public String getName(int id);
 	public boolean updatePassword(String oldpassword,String newpassword,int id);
 	public boolean signup(Customer c);
-	String loginValidation(String username, String password);
+	int loginValidation(String username, String password);
 	boolean updateprofile(int CustId, String name, String username, int phoneno, String email, String address);
+	Customer getProfile(int userId);
 
 }
